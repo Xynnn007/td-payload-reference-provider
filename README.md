@@ -8,6 +8,8 @@ Test with the example bzImage
 cargo run -- -k tests/bzImage --kernel-size 268435456
 ```
 
+The `kernel-size` parameter here means `KERNEL_SIZE` defined in guest firmware, s.t. [TD-SHIM](https://github.com/confidential-containers/td-shim)
+
 Will get the result
 ```
 5b7aa6572f649714ff00b6a2b9170516a068fd1a0ba72aa8de27574131d454e6396d3bfa1727d9baf421618a942977fa
