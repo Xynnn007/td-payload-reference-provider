@@ -1,6 +1,7 @@
 //! A simple tool to calculate td-payload's reference value due to given kernel
 
 use clap::{arg, command};
+use parse_int::parse;
 use sha2::Digest;
 use std::path::Path;
 
@@ -22,7 +23,8 @@ fn main() {
         .get_matches();
     let path = matches.value_of("kernel").unwrap();
     let path = Path::new(path).to_path_buf();
-    let siz: u64 = matches.value_of("kernel-size").unwrap().parse().unwrap();
+    let siz = matches.value_of("kernel-size").unwrap();
+    let siz = parse::<u64>(siz).unwrap();
     let file_size = std::fs::metadata(&path).unwrap().len();
     if file_size > siz {
         panic!("File size should be less than `kernel-size`");

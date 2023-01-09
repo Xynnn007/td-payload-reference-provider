@@ -9,4 +9,5 @@ edition = "2021"
 block-padding = "0.3.2"
 clap = { version = "3.0", features = ["cargo"] }
 hex = "0.4.3"
+parse_int = "0.6.0"
 sha2 = "0.10.6"
